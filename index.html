@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syaliarisa Services - Environmental & Safety Consulting</title>
+    <meta name="description" content="Syaliarisa Services provides comprehensive environmental, industrial hygiene and safety consulting services in Malaysia and the region.">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a5276',
+                        secondary: '#2980b9',
+                        accent: '#e74c3c',
+                        dark: '#2c3e50',
+                        light: '#7f8c8d',
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        heading: ['Jost', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/banner-company.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .page-header-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/banner-company.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .sidebar-menu a.active {
+            color: #1a5276;
+            font-weight: 600;
+        }
+
+        /* Mobile menu styles */
+        #mobileMenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        #mobileMenu.active {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-dropdown-content.active {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        .mobile-dropdown-toggle i {
+            transition: transform 0.3s ease;
+        }
+        .mobile-dropdown-toggle.active i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="font-sans text-dark">
+    <!-- Header/Navbar -->
+    <header class="fixed top-0 w-full bg-white shadow-sm z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/index.html" class="flex items-center">
+                    <img src="assets/images/primary-logo.png" alt="Syaliarisa Services" class="h-16">
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="/index.html" class="text-dark hover:text-primary font-medium">Home</a>
+                    <a href="/company-info.html" class="text-dark hover:text-primary font-medium">Company Info</a>
+                    <a href="/our-brand.html" class="text-dark hover:text-primary font-medium">Our Brand</a>
+                    <a href="/store-location.html" class="text-dark hover:text-primary font-medium">Our Location</a>
+                    <div class="relative group">
+                        <button class="text-dark hover:text-primary font-medium flex items-center">
+                            About Us <i class="bi bi-chevron-down ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 opacity-0 invisible 
+                                    transition-all duration-200 transform -translate-y-1 
+                                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                            <a href="/about-us/organization.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Organization</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Client List</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Standards</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Legislation</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-dark hover:text-primary font-medium flex items-center">
+                            Services <i class="bi bi-chevron-down ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 opacity-0 invisible 
+                                    transition-all duration-200 transform -translate-y-1 
+                                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                            <a href="/services/health-safety.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Health & Safety</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Training</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Engineering</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Environmental</a>
+                        </div>
+                    </div>
+                    <a href="/contact-us.html" class="text-dark hover:text-primary font-medium">Contact Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuButton" class="lg:hidden text-dark text-2xl">
+                    <i class="bi bi-list" id="menuIcon"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Content -->
+            <div id="mobileMenu" class="lg:hidden">
+                <div class="flex flex-col space-y-2 pt-4">
+                    <a href="/index.html" class="block py-2 text-dark hover:text-primary font-medium">Home</a>
+                    <a href="/company-info.html" class="block py-2 text-dark hover:text-primary font-medium">Company Info</a>
+                    <a href="/our-brand.html" class="block py-2 text-dark hover:text-primary font-medium">Our Brand</a>
+                    <a href="/store-location.html" class="block py-2 text-dark hover:text-primary font-medium">Our Location</a>
+                    
+                    <!-- Mobile Dropdown: About Us -->
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle w-full flex justify-between items-center py-2 text-dark hover:text-primary font-medium">
+                            <span>About Us</span>
+                            <i class="bi bi-chevron-down ml-1"></i>
+                        </button>
+                        <div class="mobile-dropdown-content pl-4">
+                            <a href="/about-us/organization.html" class="block py-2 hover:text-primary">Organization</a>
+                            <a href="upcoming.html" class="block py-2 hover:text-primary">Client List</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Standards</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Legislation</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Dropdown: Services -->
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle w-full flex justify-between items-center py-2 text-dark hover:text-primary font-medium">
+                            <span>Services</span>
+                            <i class="bi bi-chevron-down ml-1"></i>
+                        </button>
+                        <div class="mobile-dropdown-content pl-4">
+                            <a href="/services/health-safety.html" class="block py-2 hover:text-primary">Health & Safety</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Training</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Engineering</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Environmental</a>
+                        </div>
+                    </div>
+                    
+                    <a href="/contact-us.html" class="block py-2 text-dark hover:text-primary font-medium">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Homepage Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-[80vh] flex items-center text-white">
+            <div class="container mx-auto px-4 py-20">
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">Expert Environmental & Safety Consulting</h1>
+                    <p class="text-xl mb-8">Providing comprehensive solutions for industrial hygiene, environmental compliance, and workplace safety across Malaysia and the region.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="/contact-us.html" class="bg-primary hover:bg-secondary text-white font-medium px-6 py-3 rounded">Get a Consultation</a>
+                        <a href="/upcoming.html" class="border-2 border-white hover:bg-white hover:text-dark text-white font-medium px-6 py-3 rounded">Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-heading font-bold mb-4">Our Comprehensive Services</h2>
+                    <p class="text-light text-xl">Tailored solutions to meet your environmental, health, and safety needs</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Service Card 1 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6 text-center">
+                            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-5 text-white text-3xl">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h3 class="text-xl font-heading font-medium mb-3">Health & Safety</h3>
+                            <p class="text-light mb-5">Comprehensive workplace safety assessments and compliance solutions to protect your employees and business.</p>
+                            <a href="services/health-safety.html" class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 2 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6 text-center">
+                            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-5 text-white text-3xl">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h3 class="text-xl font-heading font-medium mb-3">Training</h3>
+                            <p class="text-light mb-5">Specialized training programs to ensure your team is equipped with the latest safety and compliance knowledge.</p>
+                            <a href="/upcoming.html" class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 3 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6 text-center">
+                            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-5 text-white text-3xl">
+                                <i class="bi bi-gear"></i>
+                            </div>
+                            <h3 class="text-xl font-heading font-medium mb-3">Engineering</h3>
+                            <p class="text-light mb-5">Engineering solutions for workplace safety, environmental controls, and industrial hygiene systems.</p>
+                            <a href="/upcoming.html" class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 4 -->
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6 text-center">
+                            <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-5 text-white text-3xl">
+                                <i class="bi bi-tree"></i>
+                            </div>
+                            <h3 class="text-xl font-heading font-medium mb-3">Environmental</h3>
+                            <p class="text-light mb-5">Environmental assessments, monitoring, and compliance services to meet regulatory requirements.</p>
+                            <a href="/upcoming.html" class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <img src="assets/images/banner-company.jpg" alt="About Syaliarisa Services" class="rounded-lg shadow-md w-full">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl font-heading font-bold mb-6">About Syaliarisa Services</h2>
+                        <p class="text-xl text-light mb-4">A trusted name in environmental and safety consulting since 2018.</p>
+                        <p class="mb-4">Syaliarisa Services Sdn. Bhd. is a premier consulting firm specializing in environmental, industrial hygiene, and safety services. Our team of certified professionals brings decades of combined experience to help businesses navigate complex regulatory landscapes.</p>
+                        <p class="mb-6">We pride ourselves on delivering practical, cost-effective solutions that not only meet compliance requirements but also enhance operational efficiency and workplace safety.</p>
+                        <a href="company-info.html" class="inline-block bg-primary hover:bg-secondary text-white font-medium px-6 py-3 rounded">Learn More About Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Portfolio Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-heading font-bold mb-4">Trusted By Industry Leaders</h2>
+                    <p class="text-light text-xl">We've partnered with organizations across various sectors to deliver exceptional results</p>
+                </div>
+                <div class="swiper clientSwiper">
+                    <div class="swiper-wrapper py-6">
+                        <div class="swiper-slide flex justify-center">
+                            <img src="assets/images/Client-01.jpg" alt="Client Logo" class="h-20 object-contain">
+                        </div>
+                        <div class="swiper-slide flex justify-center">
+                            <img src="assets/images/Client-02.png" alt="Client Logo" class="h-20 object-contain">
+                        </div>
+                        <div class="swiper-slide flex justify-center">
+                            <img src="assets/images/Client-03.png" alt="Client Logo" class="h-20 object-contain">
+                        </div>
+                        <div class="swiper-slide flex justify-center">
+                            <img src="assets/images/Client-04.jpg" alt="Client Logo" class="h-20 object-contain">
+                        </div>
+                        <div class="swiper-slide flex justify-center">
+                            <img src="assets/images/Client-05.jpg" alt="Client Logo" class="h-20 object-contain">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="/upcoming.html" class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-6 py-2 rounded">View Full Client List</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl font-heading font-bold mb-4">What Our Clients Say</h2>
+                    <p class="text-light text-xl">Hear from organizations we've helped achieve compliance and safety excellence</p>
+                </div>
+                <div class="swiper testimonialSwiper">
+                    <div class="swiper-wrapper pb-12">
+                        <!-- Testimonial 1 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-lg shadow-sm p-6 h-full">
+                                <div class="text-primary text-4xl mb-4">
+                                    <i class="bi bi-quote"></i>
+                                </div>
+                                <p class="mb-6">Syaliarisa's team provided exceptional environmental consulting services that helped us navigate complex regulations and implement effective compliance strategies.</p>
+                                <div class="flex items-center">
+                                    <img src="assets/images/testimonial-1.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <h4 class="font-medium">John Smith</h4>
+                                        <p class="text-sm text-light">Environmental Manager, Manufacturing Co.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-lg shadow-sm p-6 h-full">
+                                <div class="text-primary text-4xl mb-4">
+                                    <i class="bi bi-quote"></i>
+                                </div>
+                                <p class="mb-6">Their safety training programs are comprehensive and engaging. Our employees now have a much better understanding of workplace hazards and prevention measures.</p>
+                                <div class="flex items-center">
+                                    <img src="assets/images/testimonial-2.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <h4 class="font-medium">Sarah Johnson</h4>
+                                        <p class="text-sm text-light">HR Director, Construction Firm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-lg shadow-sm p-6 h-full">
+                                <div class="text-primary text-4xl mb-4">
+                                    <i class="bi bi-quote"></i>
+                                </div>
+                                <p class="mb-6">The industrial hygiene assessment conducted by Syaliarisa identified several areas for improvement that we had overlooked. Their recommendations were practical and effective.</p>
+                                <div class="flex items-center">
+                                    <img src="assets/images/testimonial-3.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <h4 class="font-medium">Michael Tan</h4>
+                                        <p class="text-sm text-light">Operations Manager, Food Processing Plant</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-primary text-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row justify-between items-center">
+                    <div class="lg:w-2/3 mb-8 lg:mb-0">
+                        <h2 class="text-3xl font-heading font-bold mb-4">Ready to Enhance Your Workplace Safety?</h2>
+                        <p class="text-xl">Contact us today for a free consultation on how we can help your organization achieve compliance and create a safer work environment.</p>
+                    </div>
+                    <div class="lg:w-1/3 text-center lg:text-right">
+                        <a href="contact-us.html" class="inline-block bg-white hover:bg-gray-100 text-primary font-medium px-8 py-3 rounded">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1 -->
+                <div>
+                    <img src="assets/images/secondary-logo.png" alt="Syaliarisa Services" class="h-16 mb-6">
+                    <p class="mb-6">Syaliarisa Services Sdn. Bhd. is an environmental, industrial hygiene and safety consulting, monitoring & training firm operating for Malaysia and the regions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-xl font-heading font-medium mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/index.html" class="hover:text-primary">Home</a></li>
+                        <li><a href="/company-info.html" class="hover:text-primary">Company Info</a></li>
+                        <li><a href="/our-brand.html" class="hover:text-primary">Our Brand</a></li>
+                        <li><a href="/store-location.html" class="hover:text-primary">Our Location</a></li>
+                        <li><a href="/contact-us.html" class="hover:text-primary">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-xl font-heading font-medium mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/services/health-safety.html" class="hover:text-primary">Health & Safety</a></li>
+                        <li><a href="/upcoming.html" class="hover:text-primary">Training</a></li>
+                        <li><a href="/upcoming.html" class="hover:text-primary">Engineering</a></li>
+                        <li><a href="/upcoming.html" class="hover:text-primary">Environmental</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="text-xl font-heading font-medium mb-6">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="bi bi-geo-alt mr-3 mt-1"></i>
+                            <span>123 Business Avenue, Kuala Lumpur, Malaysia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-telephone mr-3 mt-1"></i>
+                            <span>+603 1234 5678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-envelope mr-3 mt-1"></i>
+                            <span>info@syaliarisa.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="bi bi-clock mr-3 mt-1"></i>
+                            <span>Mon-Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 pb-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>&copy; 2023 Syaliarisa Services Sdn Bhd. All rights reserved.</p>
+                    <p>201803358725 (SA0496979-V)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize client logo swiper
+        const clientSwiper = new Swiper('.clientSwiper', {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 50,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 50,
+                },
+            }
+        });
+
+        // Initialize testimonial swiper
+        const testimonialSwiper = new Swiper('.testimonialSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            
+            // Toggle mobile menu
+            mobileMenuButton.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent event from bubbling to document
+                mobileMenu.classList.toggle('active');
+                
+                // Change icon from list to x when menu is open
+                if (mobileMenu.classList.contains('active')) {
+                    menuIcon.classList.remove('bi-list');
+                    menuIcon.classList.add('bi-x');
+                } else {
+                    menuIcon.classList.remove('bi-x');
+                    menuIcon.classList.add('bi-list');
+                }
+            });
+            
+            // Handle dropdown toggles in mobile menu
+            const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const dropdown = this.nextElementSibling;
+                    dropdown.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+                    mobileMenu.classList.remove('active');
+                    menuIcon.classList.remove('bi-x');
+                    menuIcon.classList.add('bi-list');
+                    
+                    // Also close any open dropdowns
+                    document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                    document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
+                        toggle.classList.remove('active');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
