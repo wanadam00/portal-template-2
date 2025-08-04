@@ -98,24 +98,28 @@
                     <a href="/store-location.html" class="text-dark hover:text-primary font-medium">Our Location</a>
                     <div class="relative group">
                         <button class="text-dark hover:text-primary font-medium flex items-center">
-                            About Us <i class="bi bi-chevron-down ml-1"></i>
+                            About Us <i class="bi bi-chevron-down ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
                         </button>
-                        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden group-hover:block">
-                            <a href="/about-us/organization.html" class="block px-4 py-2 hover:bg-gray-100">Organization</a>
-                            <a href="/about-us/client-list.html" class="block px-4 py-2 hover:bg-gray-100">Client List</a>
-                            <a href="/about-us/standards-application.html" class="block px-4 py-2 hover:bg-gray-100">Standards</a>
-                            <a href="/about-us/legislation.html" class="block px-4 py-2 hover:bg-gray-100">Legislation</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 opacity-0 invisible 
+                                    transition-all duration-200 transform -translate-y-1 
+                                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                            <a href="/about-us/organization.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Organization</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Client List</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Standards</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Legislation</a>
                         </div>
                     </div>
                     <div class="relative group">
                         <button class="text-dark hover:text-primary font-medium flex items-center">
-                            Services <i class="bi bi-chevron-down ml-1"></i>
+                            Services <i class="bi bi-chevron-down ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
                         </button>
-                        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden group-hover:block">
-                            <a href="/services/health-safety.html" class="block px-4 py-2 hover:bg-gray-100">Health & Safety</a>
-                            <a href="/services/training.html" class="block px-4 py-2 hover:bg-gray-100">Training</a>
-                            <a href="/services/engineering.html" class="block px-4 py-2 hover:bg-gray-100">Engineering</a>
-                            <a href="/services/environmental.html" class="block px-4 py-2 hover:bg-gray-100">Environmental</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 opacity-0 invisible 
+                                    transition-all duration-200 transform -translate-y-1 
+                                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                            <a href="/services/health-safety.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Health & Safety</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Training</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Engineering</a>
+                            <a href="/upcoming.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors">Environmental</a>
                         </div>
                     </div>
                     <a href="/contact-us.html" class="text-dark hover:text-primary font-medium">Contact Us</a>
@@ -143,9 +147,9 @@
                         </button>
                         <div class="mobile-dropdown-content pl-4">
                             <a href="/about-us/organization.html" class="block py-2 hover:text-primary">Organization</a>
-                            <a href="/about-us/client-list.html" class="block py-2 hover:text-primary">Client List</a>
-                            <a href="/about-us/standards-application.html" class="block py-2 hover:text-primary">Standards</a>
-                            <a href="/about-us/legislation.html" class="block py-2 hover:text-primary">Legislation</a>
+                            <a href="upcoming.html" class="block py-2 hover:text-primary">Client List</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Standards</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Legislation</a>
                         </div>
                     </div>
                     
@@ -157,9 +161,9 @@
                         </button>
                         <div class="mobile-dropdown-content pl-4">
                             <a href="/services/health-safety.html" class="block py-2 hover:text-primary">Health & Safety</a>
-                            <a href="/services/training.html" class="block py-2 hover:text-primary">Training</a>
-                            <a href="/services/engineering.html" class="block py-2 hover:text-primary">Engineering</a>
-                            <a href="/services/environmental.html" class="block py-2 hover:text-primary">Environmental</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Training</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Engineering</a>
+                            <a href="/upcoming.html" class="block py-2 hover:text-primary">Environmental</a>
                         </div>
                     </div>
                     
@@ -181,15 +185,13 @@
     <section class="py-16">
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-2/3">
+                <div class="lg:w-1/2">
                     <h2 class="text-3xl font-heading font-bold mb-6">Visit Our Office</h2>
                     
                     <div class="mb-8">
                         <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=..." 
-                                    class="w-full h-96" 
-                                    allowfullscreen="" 
-                                    loading="lazy"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.884129932865!2d101.4642796744705!3d3.125328353299674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc512f9d5fa83b%3A0xcada717e2450a0cf!2sSyaliarisa%20Services%20Sdn%20Bhd%20%2F%20Syaliarisa%20Consultants!5e0!3m2!1sen!2smy!4v1754289456873!5m2!1sen!2smy" class="w-full h-96" 
+                                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
 
@@ -217,8 +219,9 @@
                     </div>
                 </div>
 
-                <div class="lg:w-1/3">
+                <div class="lg:w-1/2">
                     <!-- Contact form or sidebar content -->
+                     <img src="assets/images/shop.jpeg" alt="Store Location" class="w-full h-auto rounded-lg shadow-lg lg:mt-16">
                 </div>
             </div>
         </div>
